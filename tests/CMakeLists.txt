@@ -6,7 +6,4 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 # adding the Google_Tests_run target
 add_executable(Google_Tests_run Vector2Test.cpp)
 
-# linking Google_Tests_run with DateConverter_lib which will be tested
-target_link_libraries(Google_Tests_run MeisterLamaths)
-
 target_link_libraries(Google_Tests_run gtest gtest_main)
