@@ -45,32 +45,36 @@ namespace MeisterLamaths
 
         [[nodiscard]] ML_FLOAT DotProduct(const Vector2& v) const;
 
-        /**
-         * Compute the amplitude of the vector.
-         * Useful for comparing vectors efficiently
-         * @return the amplitude of the vector
-         */
+        // Compute the amplitude without computing the sqrt
+        // Valid for comparisons, but actually equals to length squared
         [[nodiscard]] ML_FLOAT Amplitude() const;
 
-        /**
-         * Compute the length, applying sqrt
-         * @return the length of the vector
-         */
+        // Return the length of the vector
+        // If you only need it for comparison consider using Amplitude()
         [[nodiscard]] ML_FLOAT Length() const;
 
-        Vector2& Add(const Vector2& vec);
-
+        // Scale in place
         Vector2& Scale(const ML_FLOAT& factor);
+
+        // Get a scaled copy of the vector
         [[nodiscard]] Vector2 GetScaled(const ML_FLOAT& factor) const;
 
+        // Normalize in place
         Vector2& Normalize();
+
+        // Get a normalized copy of the vector
         [[nodiscard]] Vector2 GetNormalized() const;
 
+        // Normalize in place.
+        // Check for length != 0
         Vector2& SafeNormalize();
+
+        // Get a normalized copy of the vector
+        // If vector length == 0, return Vector{0}
         Vector2 GetSafeNormalized() const;
 
         bool Equals(const Vector2& rhs) const;
-        bool IsZero() const;
+        [[nodiscard]] bool IsZero() const;
 
         Vector2& operator=(const Vector2& other);
 
@@ -82,10 +86,12 @@ namespace MeisterLamaths
         [[nodiscard]] const T& operator[](int idx) const;
         [[nodiscard]] T& operator[](int idx);
 
+        Vector2& Add(const Vector2& vec);
         [[nodiscard]] Vector2 operator+(const Vector2& rhs) const;
         Vector2& operator+=(const Vector2& vec);
         Vector2& operator++();
 
+        Vector2& Sub(const Vector2& vec);
         [[nodiscard]] Vector2 operator-(const Vector2& rhs) const;
         Vector2& operator-=(const Vector2& vec);
         Vector2& operator--();
@@ -119,23 +125,28 @@ namespace MeisterLamaths
     template<ArithmeticType T>
     Vector2<T>& Vector2<T>::Add(const Vector2& vec)
     {
-        X += vec.X;
-        Y += vec.Y;
+        *this+= vec;
+        return *this;
+    }
+
+    template<ArithmeticType T>
+    Vector2<T>& Vector2<T>::Sub(const Vector2& vec)
+    {
+        *this-= vec;
         return *this;
     }
 
     template<ArithmeticType T>
     Vector2<T>& Vector2<T>::Scale(const ML_FLOAT& factor)
     {
-        X *= factor;
-        Y *= factor;
+        *this *= factor;
         return *this;
     }
 
     template<ArithmeticType T>
     Vector2<T> Vector2<T>::GetScaled(const ML_FLOAT& factor) const
     {
-        return Vector2(X * factor, Y * factor);
+        return *this * factor;
     }
 
     template<ArithmeticType T>
@@ -154,14 +165,14 @@ namespace MeisterLamaths
     template<ArithmeticType T>
     Vector2<T>& Vector2<T>::SafeNormalize()
     {
-        if (Length() == 0) return Vector2<T>{0};
+        if (Amplitude() == 0) return *this;
         return Normalize();
     }
 
     template<ArithmeticType T>
     Vector2<T> Vector2<T>::GetSafeNormalized() const
     {
-        if (Length() == 0) return Vector2<T>{0};
+        if (Amplitude() == 0) return Vector2<T>{0};
         return GetNormalized();
     }
 
@@ -182,6 +193,7 @@ namespace MeisterLamaths
     {
         X = other.X;
         Y = other.Y;
+        return *this;
     }
 
     template<ArithmeticType T>
@@ -194,8 +206,7 @@ namespace MeisterLamaths
     template<ArithmeticType T>
     bool Vector2<T>::operator!=(const Vector2& rhs) const
     {
-        return (X != rhs.X ||
-                Y != rhs.Y);
+        return *this != rhs;
     }
 
     template<ArithmeticType T>
@@ -222,6 +233,7 @@ namespace MeisterLamaths
     {
         X += vec.X;
         Y += vec.Y;
+        return *this;
     }
 
     template<ArithmeticType T>
