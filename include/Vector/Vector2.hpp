@@ -256,6 +256,7 @@ namespace MeisterLamaths
     {
         X -= vec.X;
         Y -= vec.Y;
+        return *this;
     }
 
     template<ArithmeticType T>
@@ -293,6 +294,7 @@ namespace MeisterLamaths
     {
         X /= scalar;
         Y /= scalar;
+        return *this;
     }
 
 }
