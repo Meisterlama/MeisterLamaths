@@ -5,6 +5,8 @@
 #ifndef MEISTERLAMATHS_META_H
 #define MEISTERLAMATHS_META_H
 
+#define INLINE_FUNCTIONS
+
 // Type definitions
 #ifdef USE_DOUBLE_PRECISION
 #define ML_FLOAT double
@@ -12,8 +14,17 @@
 #define ML_FLOAT float
 #endif
 
-// Magic numbers
+// Inline definition
+#ifdef INLINE_FUNCTIONS
+#define ML_INLINE inline
+#else
+#define ML_INLINE
+#endif
 
+// Concatenate constexpr and eventual inline
+#define ML_FUNC_DECL constexpr ML_INLINE
+
+// Magic numbers
 namespace MeisterLamaths
 {
     constexpr ML_FLOAT PI = 3.1415926535897932;
