@@ -5,8 +5,6 @@
 #ifndef MEISTERLAMATHS_META_H
 #define MEISTERLAMATHS_META_H
 
-#define INLINE_FUNCTIONS
-
 // Type definitions
 #ifdef USE_DOUBLE_PRECISION
 #define ML_FLOAT double
