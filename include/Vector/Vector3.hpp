@@ -14,7 +14,7 @@
 namespace MeisterLamaths
 {
     template<ArithmeticType T>
-    class Vector3
+    class Vector3 : Vector
     {
     public:
         union
