@@ -6,6 +6,7 @@
 
 #include <gtest/gtest.h>
 #include <Vector/Vector2.hpp>
+#include <Vector/common.hpp>
 
 using MeisterLamaths::Vector2;
 
@@ -184,6 +185,13 @@ TEST(Vector2, Comparison)
     vec2 = {-1};
     ASSERT_FALSE(vec1.Equals(vec2));
     ASSERT_FALSE(vec1 == vec2);
+}
 
-
+TEST(Vector2, Lerp)
+{
+    Vector2<float> vec1{0};
+    Vector2<float> vec2{2};
+    Vector2<float> interVec{Lerp(vec1, vec2, 0.5)};
+    Vector2<float> checkVec{1};
+    ASSERT_EQ(interVec, checkVec);
 }
