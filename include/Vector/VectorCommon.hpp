@@ -1,7 +1,7 @@
 #ifndef MEISTERLAMATHS_VECTORCOMMON_H
 #define MEISTERLAMATHS_VECTORCOMMON_H
 
-#include "Meta.h"
+#include "Meta.hpp"
 
 namespace MeisterLamaths
 {

@@ -5,7 +5,7 @@
 #ifndef MEISTERLAMATHS_VECTOR2_H
 #define MEISTERLAMATHS_VECTOR2_H
 
-#include "Meta.h"
+#include "Meta.hpp"
 #include <cmath>
 
 namespace MeisterLamaths

@@ -5,7 +5,7 @@
 #ifndef MEISTERLAMATHS_VECTOR3_H
 #define MEISTERLAMATHS_VECTOR3_H
 
-#include "Meta.h"
+#include "Meta.hpp"
 #include <type_traits>
 #include <concepts>
 #include <cmath>

@@ -1,7 +1,7 @@
 #ifndef MEISTERLAMATHS_COMMON_H
 #define MEISTERLAMATHS_COMMON_H
 
-#include "Meta.h"
+#include "Meta.hpp"
 #include <cmath>
 
 // Currently only wrapping std functions

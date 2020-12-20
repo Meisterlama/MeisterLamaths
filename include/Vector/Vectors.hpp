@@ -1,9 +1,9 @@
 #ifndef MEISTERLAMATHS_VECTORS_H
 #define MEISTERLAMATHS_VECTORS_H
 
-#include "Meta.h"
+#include "Meta.hpp"
 
-#include "Common.hpp"
+#include "VectorCommon.hpp"
 #include "Vector2.hpp"
 #include "Vector3.hpp"
 

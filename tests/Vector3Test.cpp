@@ -3,8 +3,8 @@
 //
 
 #include <gtest/gtest.h>
-#include <Vector/Vectors.h>
-#include <Common.h>
+#include <Vector/Vectors.hpp>
+#include <Common.hpp>
 
 using MeisterLamaths::vec3f;
 
