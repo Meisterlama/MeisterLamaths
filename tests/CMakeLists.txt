@@ -15,6 +15,6 @@ if (INLINE_FUNCTIONS)
 endif ()
 
 # adding the Google_Tests_run target
-add_executable(Google_Tests_run Vector2Test.cpp)
+add_executable(Google_Tests_run Vector2Test.cpp Vector3Test.cpp)
 
 target_link_libraries(Google_Tests_run gtest gtest_main)
