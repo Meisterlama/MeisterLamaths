@@ -3,8 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include <Vector/Vectors.hpp>
-#include <Common.hpp>
+#include <MeisterLamaths.hpp>
 
 using MeisterLamaths::vec2f;
 
