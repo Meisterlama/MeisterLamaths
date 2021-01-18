@@ -3,8 +3,7 @@
 
 #include "Meta.hpp"
 #include "Common.hpp"
-#include "Misc/Noise.hpp"
-#include "Misc/RNG.hpp"
+#include "Misc/Misc.hpp"
 #include "Vector/Vectors.hpp"
 
 #endif //MEISTERLAMATHS_HPP
