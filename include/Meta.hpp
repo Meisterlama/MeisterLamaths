@@ -27,13 +27,6 @@
 
 namespace MeisterLamaths
 {
-    template<typename T>
-    concept ArithmeticType = std::is_arithmetic_v<T>;
-
-    class Vector {};
-    template<class T>
-    concept VectorType = std::is_base_of_v<Vector, T>;
-
     // Magic numbers
     constexpr ML_FLOAT PI = 3.1415926535897932;
 

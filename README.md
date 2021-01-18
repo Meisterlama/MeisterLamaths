@@ -1,9 +1,7 @@
 #MeisterLamaths
 
 This is my work in progress math library that I intend
-to use for my personal and school projects.\
-It uses C++20 `concepts`
-to allow easy type-validated templating.
+to use for my personal and school projects.
 
 ***At this state this library is nowhere from usable 
    so I would recommend against using it***.

@@ -3,7 +3,6 @@
 
 #include "Meta.hpp"
 
-#include "VectorCommon.hpp"
 #include "Vector2.hpp"
 #include "Vector3.hpp"
 

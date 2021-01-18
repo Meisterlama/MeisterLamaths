@@ -10,8 +10,8 @@
 
 namespace MeisterLamaths
 {
-    template<ArithmeticType T>
-    class Vector2 : Vector
+    template<typename T>
+    class Vector2
     {
     public:
         union
@@ -94,214 +94,18 @@ namespace MeisterLamaths
         [[nodiscard]] ML_FUNC_DECL Vector2 operator/(const ML_FLOAT& scalar) const;
         ML_FUNC_DECL Vector2& operator/=(const ML_FLOAT& scalar);
 
+
     };
 
-    template<ArithmeticType T>
-    ML_FUNC_DECL ML_FLOAT Vector2<T>::DotProduct(const Vector2& v) const
-    {
-        return (X * v.X + Y * v.Y);
-    }
+    template<typename T>
+    [[nodiscard]] ML_FUNC_DECL Vector2<T> operator-(Vector2<T> vec);
 
-    template<ArithmeticType T>
-    ML_FUNC_DECL ML_FLOAT Vector2<T>::Amplitude() const
-    {
-        return DotProduct(*this);
-    }
+    template<typename T>
+    [[nodiscard]] ML_FUNC_DECL Vector2<T> operator*(const ML_FLOAT& scalar, Vector2<T> rhs);
 
-    template<ArithmeticType T>
-    ML_FUNC_DECL ML_FLOAT Vector2<T>::Length() const
-    {
-        return std::sqrt(Amplitude());
-    }
+    template<typename T>
+    [[nodiscard]] ML_FUNC_DECL Vector2<T> Lerp(Vector2<T> begin, Vector2<T> end, ML_FLOAT ratio);
 
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::Add(const Vector2& vec)
-    {
-        *this += vec;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::Sub(const Vector2& vec)
-    {
-        *this -= vec;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::Scale(const ML_FLOAT& factor)
-    {
-        *this *= factor;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::GetScaled(const ML_FLOAT& factor) const
-    {
-        return *this * factor;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::Normalize()
-    {
-        *this /= Length();
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::GetNormalized() const
-    {
-        return Vector2{*this} / Length();
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::SafeNormalize()
-    {
-        if (Amplitude() == 0) return *this;
-        return Normalize();
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::GetSafeNormalized() const
-    {
-        if (Amplitude() == 0) return Vector2<T>{0};
-        return GetNormalized();
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL bool Vector2<T>::Equals(const Vector2& rhs) const
-    {
-        return *this == rhs;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL bool Vector2<T>::IsZero() const
-    {
-        return *this == Vector2<T>{0};
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator=(const Vector2& other)
-    {
-        X = other.X;
-        Y = other.Y;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL bool Vector2<T>::operator==(const Vector2& rhs) const
-    {
-        return (X == rhs.X &&
-            Y == rhs.Y);
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL bool Vector2<T>::operator!=(const Vector2& rhs) const
-    {
-        return !(*this == rhs);
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL const T& Vector2<T>::operator[](int idx) const
-    {
-        return values[idx];
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL T& Vector2<T>::operator[](int idx)
-    {
-        return values[idx];
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::operator+(const Vector2& rhs) const
-    {
-        return Vector2<T>{X + rhs.X,
-                          Y + rhs.Y};
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator+=(const Vector2& vec)
-    {
-        X += vec.X;
-        Y += vec.Y;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator++()
-    {
-        X++;
-        Y++;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::operator-(const Vector2& rhs) const
-    {
-        return Vector2<T>{X - rhs.X,
-                          Y - rhs.Y};
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator-=(const Vector2& vec)
-    {
-        X -= vec.X;
-        Y -= vec.Y;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator--()
-    {
-        X--;
-        Y--;
-        return *this;
-    }
-
-    // TODO: Forward declaration to improve header readability
-    template<ArithmeticType T>
-    [[nodiscard]] ML_FUNC_DECL Vector2<T> operator-(Vector2<T> vec)
-    {
-        return Vector2<T>{-vec.X, -vec.Y};
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::operator*(const ML_FLOAT& scalar) const
-    {
-        return Vector2<T>{X * scalar,
-                          Y * scalar};
-    }
-
-    // TODO: Forward declaration to improve header readability
-    template<ArithmeticType T>
-    [[nodiscard]] ML_FUNC_DECL Vector2<T> operator*(const ML_FLOAT& scalar, Vector2<T> rhs)
-    {
-        return rhs * scalar;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator*=(const ML_FLOAT& scalar)
-    {
-        X *= scalar;
-        Y *= scalar;
-        return *this;
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T> Vector2<T>::operator/(const ML_FLOAT& scalar) const
-    {
-        return Vector2<T>{X / scalar,
-                          Y / scalar};
-    }
-
-    template<ArithmeticType T>
-    ML_FUNC_DECL Vector2<T>& Vector2<T>::operator/=(const ML_FLOAT& scalar)
-    {
-        X /= scalar;
-        Y /= scalar;
-        return *this;
-    }
-
+    #include "inl/Vector2.inl.h"
 }
 #endif //MEISTERLAMATHS_VECTOR2_H
