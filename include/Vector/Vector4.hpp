@@ -107,8 +107,6 @@ namespace MeisterLamaths
     template<typename T>
     [[nodiscard]] ML_FUNC_DECL Vector4<T> Lerp(Vector4<T> begin, Vector4<T> end, ML_FLOAT ratio);
 
-#ifdef ML_IMPLEMENTATION
-#include "inl/Vector4.inl.hpp"
-#endif //ML_IMPLEMENTATION
+    #include "inl/Vector4.inl.hpp"
 }
 #endif //MEISTERLAMATHS_VECTOR4_HPP

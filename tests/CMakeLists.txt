@@ -14,8 +14,6 @@ if (INLINE_FUNCTIONS)
     add_compile_definitions(INLINE_FUNCTIONS)
 endif ()
 
-add_compile_definitions(ML_IMPLEMENTATION)
-
 set(TESTS
         Vector2Test.cpp
         Vector3Test.cpp

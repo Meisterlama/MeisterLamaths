@@ -30,8 +30,6 @@ namespace MeisterLamaths
         int m_position;
     };
 
-#ifdef ML_IMPLEMENTATION
     #include "inl/RNG.inl.hpp"
-#endif //ML_IMPLEMENTATION
 }
 #endif //MEISTERLAMATHS_RNG_HPP

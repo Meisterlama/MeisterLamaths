@@ -49,8 +49,6 @@ namespace MeisterLamaths {
     ML_FLOAT Get4dNoiseNegOneToOne(unsigned int posX, unsigned int posY, unsigned int posZ, unsigned int posW,
                                 unsigned int seed = 0);
 
-#ifdef ML_IMPLEMENTATION
     #include "inl/Noise.inl.hpp"
-#endif //ML_IMPLEMENTATION
 }
 #endif //MEISTERLAMATHS_NOISE_HPP

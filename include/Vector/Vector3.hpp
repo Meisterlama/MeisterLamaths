@@ -106,8 +106,6 @@ namespace MeisterLamaths
     template<typename T>
     [[nodiscard]] ML_FUNC_DECL Vector3<T> Lerp(Vector3<T> begin, Vector3<T> end, ML_FLOAT ratio);
 
-#ifdef ML_IMPLEMENTATION
     #include "inl/Vector3.inl.hpp"
-#endif //ML_IMPLEMENTATION
 }
 #endif //MEISTERLAMATHS_VECTOR3_HPP
