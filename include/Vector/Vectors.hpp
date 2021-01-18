@@ -5,6 +5,7 @@
 
 #include "Vector2.hpp"
 #include "Vector3.hpp"
+#include "Vector4.hpp"
 
 namespace MeisterLamaths
 {
@@ -15,6 +16,10 @@ namespace MeisterLamaths
     typedef Vector3<float> vec3f;
     typedef Vector3<signed int> vec3i;
     typedef Vector3<unsigned int> vec3u;
+
+    typedef Vector4<float> vec4f;
+    typedef Vector4<signed int> vec4i;
+    typedef Vector4<unsigned int> vec4u;
 }
 
 #endif //MEISTERLAMATHS_VECTORS_HPP

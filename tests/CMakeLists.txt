@@ -16,7 +16,14 @@ endif ()
 
 add_compile_definitions(ML_IMPLEMENTATION)
 
+set(TESTS
+        Vector2Test.cpp
+        Vector3Test.cpp
+        Vector4Test.cpp
+        NoiseTest.cpp
+        )
+
 # adding the Google_Tests_run target
-add_executable(Google_Tests_run Vector2Test.cpp Vector3Test.cpp NoiseTest.cpp)
+add_executable(Google_Tests_run ${TESTS})
 
 target_link_libraries(Google_Tests_run gtest gtest_main)
