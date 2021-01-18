@@ -14,6 +14,8 @@ if (INLINE_FUNCTIONS)
     add_compile_definitions(INLINE_FUNCTIONS)
 endif ()
 
+add_compile_definitions(ML_IMPLEMENTATION)
+
 # adding the Google_Tests_run target
 add_executable(Google_Tests_run Vector2Test.cpp Vector3Test.cpp)
 

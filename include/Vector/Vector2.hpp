@@ -106,6 +106,8 @@ namespace MeisterLamaths
     template<typename T>
     [[nodiscard]] ML_FUNC_DECL Vector2<T> Lerp(Vector2<T> begin, Vector2<T> end, ML_FLOAT ratio);
 
-    #include "inl/Vector2.inl.h"
+#ifdef ML_IMPLEMENTATION
+    #include "inl/Vector2.inl.hpp"
+#endif //ML_IMPLEMENTATION
 }
 #endif //MEISTERLAMATHS_VECTOR2_H
