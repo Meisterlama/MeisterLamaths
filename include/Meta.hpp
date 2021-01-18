@@ -5,9 +5,6 @@
 #ifndef MEISTERLAMATHS_META_HPP
 #define MEISTERLAMATHS_META_HPP
 
-#include <type_traits>
-#include <concepts>
-
 // Type definitions
 #ifdef USE_DOUBLE_PRECISION
 #define ML_FLOAT double

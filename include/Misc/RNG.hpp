@@ -1,6 +1,8 @@
 #ifndef MEISTERLAMATHS_RNG_HPP
 #define MEISTERLAMATHS_RNG_HPP
 
+#include "Meta.hpp"
+
 namespace MeisterLamaths
 {
     class RNG {

@@ -6,8 +6,6 @@
 #define MEISTERLAMATHS_VECTOR3_HPP
 
 #include "Meta.hpp"
-#include <type_traits>
-#include <concepts>
 #include <cmath>
 
 
