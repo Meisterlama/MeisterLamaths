@@ -2,8 +2,8 @@
 // Created by lama on 16/12/2020.
 //
 
-#ifndef MEISTERLAMATHS_META_H
-#define MEISTERLAMATHS_META_H
+#ifndef MEISTERLAMATHS_META_HPP
+#define MEISTERLAMATHS_META_HPP
 
 #include <type_traits>
 #include <concepts>
@@ -33,4 +33,4 @@ namespace MeisterLamaths
     constexpr ML_FLOAT EPSILON = 0.00000001;
 }
 
-#endif //MEISTERLAMATHS_META_H
+#endif //MEISTERLAMATHS_META_HPP

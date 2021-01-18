@@ -1,5 +1,5 @@
-#ifndef MEISTERLAMATHS_COMMON_H
-#define MEISTERLAMATHS_COMMON_H
+#ifndef MEISTERLAMATHS_COMMON_HPP
+#define MEISTERLAMATHS_COMMON_HPP
 
 #include "Meta.hpp"
 #include <cmath>
@@ -93,4 +93,4 @@ namespace MeisterLamaths
     }
 }
 
-#endif //MEISTERLAMATHS_COMMON_H
+#endif //MEISTERLAMATHS_COMMON_HPP

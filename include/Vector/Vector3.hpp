@@ -2,8 +2,8 @@
 // Created by lama on 16/12/2020.
 //
 
-#ifndef MEISTERLAMATHS_VECTOR3_H
-#define MEISTERLAMATHS_VECTOR3_H
+#ifndef MEISTERLAMATHS_VECTOR3_HPP
+#define MEISTERLAMATHS_VECTOR3_HPP
 
 #include "Meta.hpp"
 #include <type_traits>
@@ -112,4 +112,4 @@ namespace MeisterLamaths
     #include "inl/Vector3.inl.hpp"
 #endif //ML_IMPLEMENTATION
 }
-#endif //MEISTERLAMATHS_VECTOR3_H
+#endif //MEISTERLAMATHS_VECTOR3_HPP

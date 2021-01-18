@@ -1,5 +1,5 @@
-#ifndef MEISTERLAMATHS_VECTORS_H
-#define MEISTERLAMATHS_VECTORS_H
+#ifndef MEISTERLAMATHS_VECTORS_HPP
+#define MEISTERLAMATHS_VECTORS_HPP
 
 #include "Meta.hpp"
 
@@ -17,4 +17,4 @@ namespace MeisterLamaths
     typedef Vector3<unsigned int> vec3u;
 }
 
-#endif //MEISTERLAMATHS_VECTORS_H
+#endif //MEISTERLAMATHS_VECTORS_HPP

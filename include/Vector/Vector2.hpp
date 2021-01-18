@@ -2,8 +2,8 @@
 // Created by lama on 16/12/2020.
 //
 
-#ifndef MEISTERLAMATHS_VECTOR2_H
-#define MEISTERLAMATHS_VECTOR2_H
+#ifndef MEISTERLAMATHS_VECTOR2_HPP
+#define MEISTERLAMATHS_VECTOR2_HPP
 
 #include "Meta.hpp"
 #include <cmath>
@@ -110,4 +110,4 @@ namespace MeisterLamaths
     #include "inl/Vector2.inl.hpp"
 #endif //ML_IMPLEMENTATION
 }
-#endif //MEISTERLAMATHS_VECTOR2_H
+#endif //MEISTERLAMATHS_VECTOR2_HPP
