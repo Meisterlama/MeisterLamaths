@@ -208,9 +208,8 @@ ML_FUNC_DECL Vector2<T>& Vector2<T>::operator/=(const ML_FLOAT& scalar)
 
 template<typename T>
 ML_FUNC_DECL Vector2<T> Lerp(Vector2<T> begin, Vector2<T> end, float ratio) {
-ratio = (ratio > 1) ? 1 : (ratio < 0) ?  0 : ratio;
-
-return (1 - ratio) * begin + ratio * end;
+    ratio = (ratio > 1) ? 1 : (ratio < 0) ?  0 : ratio;
+    return (1 - ratio) * begin + ratio * end;
 }
 
 #endif // MEISTERLAMATHS_VECTOR2_INL
